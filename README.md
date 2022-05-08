@@ -2,7 +2,7 @@
 
 ## Why this project
 
-What I am interested in is if the WebSocket server sends message to the client frequently, does it affect the client's requests? Should I use multiple WebSocket connections to  the data traffic?
+What I am interested in is if the WebSocket server sends message to the client frequently, does it affect the client's requests? Should I use multiple WebSocket connections to split the data traffic?
 
 So I used Golang to do the benchmarking for this scenario. Finally, let's share this result with you.
 
