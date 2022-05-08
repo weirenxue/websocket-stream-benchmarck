@@ -2,7 +2,7 @@
 
 ## Why this project
 
-What I am interested in is if the WebSocket server sends message to the client frequently, does it affect the client's requests? Should I use multiple WebSocket connections to share the data traffic?
+What I am interested in is if the WebSocket server sends message to the client frequently, does it affect the client's requests? Should I use multiple WebSocket connections to  the data traffic?
 
 So I used Golang to do the benchmarking for this scenario. Finally, let's share this result with you.
 
@@ -38,7 +38,7 @@ You may want to change the configuration in `config.toml` to see the test result
 ## Design concept
 
 - Server: As soon as the client connects to the server, the server sends a message of size `dummy_message_size` to the client every `dummy_message_duration`. The server listens to see if the client is sending a message, and if so, it will receive and reply directly to the original message.
-- Client: The client generates a `uuid` as a message body to the server, and the server must send back the same message. Based on the uniqueness of `uuid`, we can know the time it takes for a request to go from being sent to being answered, and finally divide the time required for each request by the number of requests.
+- Client: The client generates a `uuid` as a message body to the server, and the server must send back the same message. Based on the uniqueness of `uuid`, we can know the time it takes for a request to go from being sent to being answered, and finally divide the time required for each request by the number of requests to get the average round-trip time.
 
 **Finally, each case is tested five times, and the worst case is selected and recorded in the experimental results.**
 
