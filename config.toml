@@ -1,0 +1,9 @@
+[server]
+host = "localhost"
+port = "8080"
+dummy_message_size = "1MB"
+dummy_message_duration = "500us"
+
+[client]
+request_duration = "10ms"
+total_request = 1000
